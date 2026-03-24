@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guida Pass D Temporaneo – APU Alessandria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --rosso:   #b01c2e;
+      --rosso-scuro: #7d1220;
+      --oro:     #c8922a;
+      --oro-chiaro: #f5e6c8;
+      --grigio-chiaro: #f4f2ef;
+      --grigio-medio: #d8d4cc;
+      --testo:   #1a1612;
+      --bianco:  #fdfaf6;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Titillium Web', sans-serif;
+      background: var(--grigio-chiaro);
+      color: var(--testo);
+      line-height: 1.65;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--rosso);
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          rgba(255,255,255,.03) 0px,
+          rgba(255,255,255,.03) 1px,
+          transparent 1px,
+          transparent 12px
+        );
+      color: var(--bianco);
+      padding: 3.5rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 40px;
+      background: var(--grigio-chiaro);
+      clip-path: polygon(0 100%, 100% 0, 100% 100%);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--oro);
+      color: var(--bianco);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: .35rem .9rem;
+      border-radius: 2px;
+      margin-bottom: 1.1rem;
+    }
+    .hero h1 {
+      font-family: 'Titillium Web', sans-serif;
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: .7rem;
+      letter-spacing: -.01em;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto .5rem;
+      opacity: .92;
+    }
+    .hero-url {
+      display: inline-block;
+      margin-top: .9rem;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 4px;
+      padding: .45rem 1rem;
+      font-size: .88rem;
+      color: var(--bianco);
+      text-decoration: none;
+      letter-spacing: .04em;
+      transition: background .2s;
+    }
+    .hero-url:hover { background: rgba(255,255,255,.22); }
+
+    /* ── AVVISO ── */
+    .avviso {
+      max-width: 860px;
+      margin: 2.5rem auto 0;
+      padding: 0 1.5rem;
+    }
+    .avviso-box {
+      background: var(--oro-chiaro);
+      border-left: 4px solid var(--oro);
+      border-radius: 4px;
+      padding: 1rem 1.4rem;
+      font-size: .93rem;
+    }
+    .avviso-box strong { color: var(--rosso-scuro); }
+
+    /* ── GUIDE CONTAINER ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── STEP ── */
+    .step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 0 1.4rem;
+      margin-bottom: 3rem;
+      animation: fadeUp .5s ease both;
+    }
+    .step:nth-child(1) { animation-delay: .05s; }
+    .step:nth-child(2) { animation-delay: .10s; }
+    .step:nth-child(3) { animation-delay: .15s; }
+    .step:nth-child(4) { animation-delay: .20s; }
+    .step:nth-child(5) { animation-delay: .25s; }
+    .step:nth-child(6) { animation-delay: .30s; }
+    .step:nth-child(7) { animation-delay: .35s; }
+    .step:nth-child(8) { animation-delay: .40s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .step-number {
+      width: 56px;
+      height: 56px;
+      background: var(--rosso);
+      color: var(--bianco);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Titillium Web', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(176,28,46,.25);
+      position: relative;
+      top: .1rem;
+    }
+
+    .step-body {}
+
+    .step-body h2 {
+      font-family: 'Titillium Web', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--rosso-scuro);
+      margin-bottom: .45rem;
+      line-height: 1.2;
+    }
+
+    .step-body p {
+      font-size: .97rem;
+      color: #3a322a;
+      margin-bottom: .7rem;
+    }
+
+    .step-body .highlight {
+      display: inline-block;
+      background: var(--rosso);
+      color: var(--bianco);
+      font-weight: 600;
+      font-size: .88rem;
+      padding: .25rem .7rem;
+      border-radius: 3px;
+      letter-spacing: .03em;
+      margin-bottom: .8rem;
+    }
+
+    .step-body .quote {
+      background: var(--bianco);
+      border-left: 3px solid var(--oro);
+      padding: .7rem 1rem;
+      font-size: .88rem;
+      font-style: italic;
+      color: #5a4e42;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: .9rem;
+      line-height: 1.5;
+    }
+
+    /* ── SCREENSHOT ── */
+    .screenshot-wrap {
+      margin-top: .9rem;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.13), 0 1px 4px rgba(0,0,0,.08);
+      border: 1px solid var(--grigio-medio);
+    }
+    .screenshot-label {
+      background: var(--rosso-scuro);
+      color: var(--bianco);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .4rem .9rem;
+    }
+    .screenshot-wrap img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ── DIVIDER ── */
+    .step + .step {
+      padding-top: 1rem;
+      border-top: 1px dashed var(--grigio-medio);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--rosso-scuro);
+      color: rgba(255,255,255,.7);
+      text-align: center;
+      padding: 1.6rem 1rem;
+      font-size: .82rem;
+      letter-spacing: .04em;
+    }
+    footer strong { color: var(--bianco); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 540px) {
+      .step { grid-template-columns: 44px 1fr; gap: 0 1rem; }
+      .step-number { width: 44px; height: 44px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">Comune di Alessandria · APU-AL</div>
+  <h1>Guida al Pass D&nbsp;Temporaneo</h1>
+  <p>Come richiedere online il permesso di accesso all'Area a Pedonalità Urbana per interventi temporanei — <strong>chiesa di san Giovannino, corso Roma, 120</strong>.</p>
+  <a class="hero-url" href="https://pass.brav.it/Alessandria/Frontoffice/" target="_blank">
+    🔗 pass.brav.it/Alessandria/Frontoffice/
+  </a>
+</header>
+
+<!-- AVVISO -->
+<div class="avviso">
+  <div class="avviso-box">
+    ⚠️ <strong>Cosa consente il Pass D Temporaneo:</strong>
+    accesso da tutti i varchi APU-AL · sosta carico/scarico max 30 min con disco orario · fermata connessa alle operazioni dell'attività.
+  </div>
+</div>
+
+<!-- STEPS -->
+<main class="container">
+
+  <!-- 1 -->
+  <div class="step">
+    <div class="step-number">1</div>
+    <div class="step-body">
+      <h2>Registrazione e accesso al portale</h2>
+      <p>Collegarsi al portale e accedere. Si consiglia l'accesso tramite <strong>SPID</strong> (molto più rapido). In alternativa è possibile registrarsi con email e password: verrà inviato un <strong>codice antispam</strong> all'indirizzo indicato, da inserire per completare l'accesso.</p>
+      <div class="screenshot-wrap">
+        <div class="screenshot-label">Schermata principale del portale</div>
+        <img src="passo1.png" alt="Home del portale permessi APU-AL Alessandria" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="step">
+    <div class="step-number">2</div>
+    <div class="step-body">
+      <h2>Richiedere un nuovo permesso</h2>
+      <p>Dalla schermata principale cliccare sul pulsante in alto a destra:</p>
+      <span class="highlight">→ RICHIEDI UN NUOVO PERMESSO</span>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="step">
+    <div class="step-number">3</div>
+    <div class="step-body">
+      <h2>Scegliere il tipo di permesso</h2>
+      <p>Dall'elenco dei permessi disponibili, selezionare:</p>
+      <span class="highlight">→ PASS D – TEMPORANEO</span>
+      <div class="screenshot-wrap">
+        <div class="screenshot-label">Elenco tipi di permessi</div>
+        <img src="passo2.png" alt="Elenco dei tipi di permessi APU" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="step">
+    <div class="step-number">4</div>
+    <div class="step-body">
+      <h2>Compilare la sezione VALIDITÀ</h2>
+      <p>Espandere la sezione <strong>VALIDITÀ</strong> e indicare:</p>
+      <p>• <strong>Inizio validità</strong>: data e ora di inizio lavori/intervento<br/>
+         • <strong>Fine validità</strong>: data e ora di conclusione<br/>
+         • <strong>Settore</strong>: lasciare <em>ZONA APU</em></p>
+      <div class="screenshot-wrap">
+        <div class="screenshot-label">Sezione Validità</div>
+        <img src="passo3.png" alt="Form sezione Validità" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="step">
+    <div class="step-number">5</div>
+    <div class="step-body">
+      <h2>Sezione DICHIARAZIONI</h2>
+      <p>Espandere la sezione <strong>DICHIARAZIONI</strong> e selezionare <strong>l'ultima voce</strong> dell'elenco:</p>
+      <div class="quote">
+        "Servizi tecnici, operativi, logistici e di supporto alle attività presenti in APU, comprendenti interventi di manutenzione, assistenza, pulizia, fornitura, allestimento necessario al funzionamento di impianti, attrezzature o esercizi. Sono inclusi i soggetti che svolgono attività temporanee connesse a installazioni, riparazioni o necessità di fornitura o allestimento presso domicilio di terzi (es. catering, piante e fiori etc)"
+      </div>
+      <div class="screenshot-wrap">
+        <div class="screenshot-label">Sezione Dichiarazioni – selezionare l'ultima voce</div>
+        <img src="passo4.png" alt="Form sezione Dichiarazioni" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="step">
+    <div class="step-number">6</div>
+    <div class="step-body">
+      <h2>Avvertenze legali</h2>
+      <p>Espandere la sezione <strong>AVVERTENZE LEGALI</strong> e <strong>spuntare la casella</strong> di presa visione dell'informativa (dichiarazione ai sensi del D.P.R. n.&nbsp;445/2000).</p>
+      <div class="screenshot-wrap">
+        <div class="screenshot-label">Sezione Avvertenze Legali</div>
+        <img src="passo5.png" alt="Form sezione Avvertenze Legali" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="step">
+    <div class="step-number">7</div>
+    <div class="step-body">
+      <h2>Dati del veicolo</h2>
+      <p>Espandere la sezione <strong>VEICOLI</strong> e compilare tutti i campi:</p>
+      <p>• <strong>Targa</strong><br/>
+         • <strong>Tipo</strong> (dal menu a tendina)<br/>
+         • <strong>Alimentazione</strong><br/>
+         • <strong>Tipo di proprietà</strong><br/>
+         • <strong>Marca</strong> e <strong>Modello</strong><br/>
+         • <strong>Classe Euro</strong><br/>
+         • Allegare la <strong>carta di circolazione</strong> tramite il pulsante <em>"Seleziona…"</em></p>
+      <div class="screenshot-wrap">
+        <div class="screenshot-label">Sezione Veicoli</div>
+        <img src="passo6.png" alt="Form sezione Veicoli" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="step">
+    <div class="step-number">8</div>
+    <div class="step-body">
+      <h2>Inviare la richiesta</h2>
+      <p>Cliccare il pulsante verde in basso a destra:</p>
+      <span class="highlight">→ INSERISCI</span>
+      <p style="margin-top:.7rem">La richiesta verrà registrata nel sistema. È possibile verificarne lo stato nella sezione <strong>"ELENCO PERMESSI"</strong> della schermata principale.</p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Guida non ufficiale redatta a supporto degli operatori · <strong>Comune di Alessandria</strong> · Portale APU-AL
+</footer>
+
+</body>
+</html>
