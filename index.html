@@ -4,109 +4,108 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Guida Pass D Temporaneo – APU Alessandria</title>
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --rosso:   #b01c2e;
-      --rosso-scuro: #7d1220;
-      --oro:     #c8922a;
-      --oro-chiaro: #f5e6c8;
-      --grigio-chiaro: #f4f2ef;
-      --grigio-medio: #d8d4cc;
-      --testo:   #1a1612;
-      --bianco:  #fdfaf6;
+      --nero:        #1a1a1a;
+      --grigio-sc:   #444444;
+      --grigio-md:   #888888;
+      --grigio-bd:   #cccccc;
+      --grigio-lg:   #eeeeee;
+      --sfondo:      #f7f7f7;
+      --bianco:      #ffffff;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Titillium Web', sans-serif;
-      background: var(--grigio-chiaro);
-      color: var(--testo);
+      background: var(--sfondo);
+      color: var(--nero);
       line-height: 1.65;
     }
 
-    /* ── HERO ── */
+    /* ── INTESTAZIONE ── */
     .hero {
-      background: var(--rosso);
-      background-image:
-        repeating-linear-gradient(
-          45deg,
-          rgba(255,255,255,.03) 0px,
-          rgba(255,255,255,.03) 1px,
-          transparent 1px,
-          transparent 12px
-        );
-      color: var(--bianco);
-      padding: 3.5rem 2rem 3rem;
+      background: var(--bianco);
+      border-bottom: 1px solid var(--grigio-bd);
+      padding: 2.8rem 2rem 2.2rem;
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -1px; left: 0; right: 0;
-      height: 40px;
-      background: var(--grigio-chiaro);
-      clip-path: polygon(0 100%, 100% 0, 100% 100%);
-    }
-    .hero-badge {
-      display: inline-block;
-      background: var(--oro);
-      color: var(--bianco);
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      padding: .35rem .9rem;
-      border-radius: 2px;
-      margin-bottom: 1.1rem;
+    .hero img.stemma {
+      width: clamp(80px, 12vw, 120px);
+      height: auto;
+      display: block;
+      margin: 0 auto 1.4rem;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,.15));
     }
     .hero h1 {
-      font-family: 'Titillium Web', sans-serif;
-      font-size: clamp(1.9rem, 5vw, 3rem);
-      font-weight: 900;
-      line-height: 1.15;
-      margin-bottom: .7rem;
-      letter-spacing: -.01em;
+      font-family: 'Bodoni Moda', 'Bodoni 72 Oldstyle', 'Book Antiqua', Georgia, serif;
+      font-size: clamp(1rem, 2.8vw, 1.6rem);
+      font-weight: 700;
+      font-variant: small-caps;
+      letter-spacing: .06em;
+      color: var(--nero);
+      margin-bottom: .55rem;
+      line-height: 1.25;
     }
-    .hero p {
-      font-size: 1.05rem;
+    .hero-divider {
+      width: 55%;
+      max-width: 560px;
+      border: none;
+      border-top: 1px solid var(--grigio-bd);
+      margin: .6rem auto .75rem;
+    }
+    .hero-motto {
+      font-family: 'Bodoni Moda', 'Bodoni 72 Oldstyle', 'Book Antiqua', Georgia, serif;
+      font-size: clamp(.7rem, 1.6vw, .85rem);
+      font-style: italic;
+      color: var(--grigio-sc);
+      letter-spacing: .02em;
+      margin-bottom: 2rem;
+    }
+    .hero-desc {
+      font-size: .97rem;
       font-weight: 300;
-      max-width: 600px;
-      margin: 0 auto .5rem;
-      opacity: .92;
+      color: var(--grigio-sc);
+      max-width: 560px;
+      margin: 0 auto .3rem;
+      line-height: 1.6;
     }
     .hero-url {
       display: inline-block;
-      margin-top: .9rem;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.3);
-      border-radius: 4px;
-      padding: .45rem 1rem;
-      font-size: .88rem;
-      color: var(--bianco);
+      margin-top: 1rem;
+      border: 1px solid var(--grigio-md);
+      border-radius: 3px;
+      padding: .4rem 1.1rem;
+      font-size: .83rem;
+      color: var(--grigio-sc);
       text-decoration: none;
       letter-spacing: .04em;
-      transition: background .2s;
+      font-weight: 600;
+      transition: border-color .2s, color .2s;
     }
-    .hero-url:hover { background: rgba(255,255,255,.22); }
+    .hero-url:hover {
+      border-color: var(--nero);
+      color: var(--nero);
+    }
 
     /* ── AVVISO ── */
     .avviso {
       max-width: 860px;
-      margin: 2.5rem auto 0;
+      margin: 2.2rem auto 0;
       padding: 0 1.5rem;
     }
     .avviso-box {
-      background: var(--oro-chiaro);
-      border-left: 4px solid var(--oro);
-      border-radius: 4px;
-      padding: 1rem 1.4rem;
-      font-size: .93rem;
+      background: var(--bianco);
+      border: 1px solid var(--grigio-bd);
+      border-left: 3px solid var(--grigio-md);
+      border-radius: 3px;
+      padding: .9rem 1.3rem;
+      font-size: .92rem;
+      color: var(--grigio-sc);
     }
-    .avviso-box strong { color: var(--rosso-scuro); }
+    .avviso-box strong { color: var(--nero); }
 
     /* ── GUIDE CONTAINER ── */
     .container {
@@ -118,10 +117,10 @@
     /* ── STEP ── */
     .step {
       display: grid;
-      grid-template-columns: 56px 1fr;
+      grid-template-columns: 52px 1fr;
       gap: 0 1.4rem;
       margin-bottom: 3rem;
-      animation: fadeUp .5s ease both;
+      animation: fadeUp .45s ease both;
     }
     .step:nth-child(1) { animation-delay: .05s; }
     .step:nth-child(2) { animation-delay: .10s; }
@@ -133,85 +132,83 @@
     .step:nth-child(8) { animation-delay: .40s; }
 
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
+      from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
     .step-number {
-      width: 56px;
-      height: 56px;
-      background: var(--rosso);
+      width: 52px;
+      height: 52px;
+      background: var(--nero);
       color: var(--bianco);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Titillium Web', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       font-weight: 700;
       flex-shrink: 0;
-      box-shadow: 0 3px 10px rgba(176,28,46,.25);
       position: relative;
       top: .1rem;
     }
 
-    .step-body {}
-
     .step-body h2 {
       font-family: 'Titillium Web', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      color: var(--rosso-scuro);
+      color: var(--nero);
       margin-bottom: .45rem;
       line-height: 1.2;
     }
 
     .step-body p {
-      font-size: .97rem;
-      color: #3a322a;
+      font-size: .96rem;
+      color: var(--grigio-sc);
       margin-bottom: .7rem;
     }
 
     .step-body .highlight {
       display: inline-block;
-      background: var(--rosso);
+      background: var(--nero);
       color: var(--bianco);
       font-weight: 600;
-      font-size: .88rem;
-      padding: .25rem .7rem;
-      border-radius: 3px;
-      letter-spacing: .03em;
+      font-size: .86rem;
+      padding: .25rem .75rem;
+      border-radius: 2px;
+      letter-spacing: .05em;
       margin-bottom: .8rem;
     }
 
     .step-body .quote {
-      background: var(--bianco);
-      border-left: 3px solid var(--oro);
-      padding: .7rem 1rem;
+      background: var(--grigio-lg);
+      border-left: 3px solid var(--grigio-md);
+      padding: .75rem 1rem;
       font-size: .88rem;
       font-style: italic;
-      color: #5a4e42;
-      border-radius: 0 4px 4px 0;
+      color: var(--grigio-sc);
+      border-radius: 0 3px 3px 0;
       margin-bottom: .9rem;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
     /* ── SCREENSHOT ── */
     .screenshot-wrap {
       margin-top: .9rem;
-      border-radius: 6px;
+      border-radius: 4px;
       overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,.13), 0 1px 4px rgba(0,0,0,.08);
-      border: 1px solid var(--grigio-medio);
+      box-shadow: 0 2px 12px rgba(0,0,0,.10);
+      border: 1px solid var(--grigio-bd);
     }
     .screenshot-label {
-      background: var(--rosso-scuro);
-      color: var(--bianco);
-      font-size: .72rem;
+      background: var(--grigio-lg);
+      color: var(--grigio-sc);
+      border-bottom: 1px solid var(--grigio-bd);
+      font-size: .7rem;
       font-weight: 600;
-      letter-spacing: .12em;
+      letter-spacing: .1em;
       text-transform: uppercase;
-      padding: .4rem .9rem;
+      padding: .38rem .9rem;
     }
     .screenshot-wrap img {
       width: 100%;
@@ -221,34 +218,37 @@
     /* ── DIVIDER ── */
     .step + .step {
       padding-top: 1rem;
-      border-top: 1px dashed var(--grigio-medio);
+      border-top: 1px dashed var(--grigio-bd);
     }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--rosso-scuro);
-      color: rgba(255,255,255,.7);
+      background: var(--grigio-lg);
+      border-top: 1px solid var(--grigio-bd);
+      color: var(--grigio-md);
       text-align: center;
-      padding: 1.6rem 1rem;
-      font-size: .82rem;
+      padding: 1.4rem 1rem;
+      font-size: .8rem;
       letter-spacing: .04em;
     }
-    footer strong { color: var(--bianco); }
+    footer strong { color: var(--grigio-sc); }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 540px) {
-      .step { grid-template-columns: 44px 1fr; gap: 0 1rem; }
-      .step-number { width: 44px; height: 44px; font-size: 1.2rem; }
+      .step { grid-template-columns: 42px 1fr; gap: 0 1rem; }
+      .step-number { width: 42px; height: 42px; font-size: 1.1rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- HERO -->
+<!-- INTESTAZIONE -->
 <header class="hero">
-  <div class="hero-badge">Comune di Alessandria · APU-AL</div>
-  <h1>Guida al Pass D&nbsp;Temporaneo</h1>
-  <p>Come richiedere online il permesso di accesso all'Area a Pedonalità Urbana per interventi temporanei — <strong>chiesa di san Giovannino, corso Roma, 120</strong>.</p>
+  <img class="stemma" src="stemma_confraternita_sfondo_trasp-2.png" alt="Stemma della Veneranda Confraternita del Santissimo Crocifisso di Alessandria"/>
+  <h2>Veneranda Confraternita del Santissimo Crocifisso di Alessandria</h2>
+  <hr class="hero-divider"/>
+  <p class="hero-motto">Fundata Tempore Devotionis Magnæ &bull; Erecta In Lumine Crucis &bull; Sub Pontifice Clemente IV &bull; Anno Salutis MCCLXV &bull; In Urbe Alexii</p>
+  <p class="hero-desc">Come richiedere online il permesso di accesso all'Area a Pedonalità Urbana (APU-AL) per interventi temporanei presso la <strong>chiesa di san Giovannino, corso Roma, 120</strong>.</p>
   <a class="hero-url" href="https://pass.brav.it/Alessandria/Frontoffice/" target="_blank">
     🔗 pass.brav.it/Alessandria/Frontoffice/
   </a>
@@ -257,8 +257,8 @@
 <!-- AVVISO -->
 <div class="avviso">
   <div class="avviso-box">
-    ⚠️ <strong>Cosa consente il Pass D Temporaneo:</strong>
-    accesso da tutti i varchi APU-AL · sosta carico/scarico max 30 min con disco orario · fermata connessa alle operazioni dell'attività.
+    <strong>Cosa consente il Pass D Temporaneo:</strong>
+    accesso da tutti i varchi APU-AL &middot; sosta carico/scarico max 30 min con disco orario &middot; fermata connessa alle operazioni dell'attività.
   </div>
 </div>
 
@@ -381,7 +381,7 @@
 </main>
 
 <footer>
-  Guida non ufficiale redatta a supporto degli operatori · <strong>Comune di Alessandria</strong> · Portale APU-AL
+  Guida non ufficiale redatta a supporto degli operatori &middot; <strong>Veneranda Confraternita del Santissimo Crocifisso di Alessandria</strong> &middot; Portale APU-AL
 </footer>
 
 </body>
